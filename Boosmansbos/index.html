@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Team Building Hike in Boosmansbos, August 2014</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /> -->
+        <link rel="stylesheet" href="../css/leaflet.css" />
+        <link rel="stylesheet" href="../css/leaflet.zoomdisplay.css" />
+	<style>
+		body {
+		    padding: 0;
+		    margin: 0;
+		}
+		html, body, #map {
+		    height: 100%;
+		    width: 100%;
+            background: white;
+		}
+    	</style>
+        <link rel="shortcut icon" href="http://kartoza.com/wp-content/uploads/2014/08/kartoza-favicon.ico" />
+
+</head>
+<body>
+	<div id="map"></div>
+        <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> -->
+        <script src="../js/leaflet.js"></script>
+        <script src="../js/leaflet.zoomdisplay.js"></script>
+	<script>
+		var map = L.map('map', {
+    		    center: [-34.02205, 20.44254],
+    	            zoom: 15,
+                    minZoom: 14,
+                    maxZoom: 18,
+                    maxBounds: [[-34.049,20.410] ,[-34.010,20.478]],
+		});
+		var qgis = L.tileLayer.wms("http://maps.kartoza.com/cgi-bin/qgis_mapserv.fcgi?map=/web/Boosmansbos/Boosmansbos.qgs", {
+		    layers: 'Swellendam',
+		    format: 'image/png',
+		    transparent: true,
+		    attribution: 'QGIS'
+		}).addTo(map);
+	</script>
+</body>
+</html>
+
