@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
 
     <title>Kartoza Map Gallery</title>
 
@@ -29,6 +28,7 @@
             background-color: #ffffff;
         }
     </style>
+    <link rel="shortcut icon" href="http://kartoza.com/wp-content/uploads/2014/08/kartoza-favicon.ico" />
   </head>
 
   <body>
@@ -58,6 +58,8 @@
         Here at <a href="http://maps.kartoza.com">maps.kartoza.com</a> we
         provide a sample of the kind of online mapping products we are able to
         deliver using Open Source tools such as QGIS, UMN MapServer and GeoServer.
+        All of the content of this maps gallery is available for download at 
+        <a href="https://github.com/kartoza/maps.kartoza.com">https://github.com/kartoza/maps.kartoza.com</a>.
         <p><a class="btn btn-primary btn-lg" role="button" href="http://kartoza.com">Kartoza Home &raquo;</a></p>
       </div>
     </div>
@@ -67,12 +69,41 @@
       <div class="row">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="img/swellendam.png" alt="...">
+                <img src="/Boosmansbos/thumbnail.png" alt="Boosmansbos thumbnail">
 
                 <div class="caption">
-                    <h3>Swellendam OSM Data</h3>
+                    <h3>Boosmansbos</h3>
 
-                    <p>...</p>
+		    <p>This is a hiking trail map for Boosmansbos Wilderness
+                       Area, near Heidelberg in the Western Cape Province of South Africa. The track
+                       shown is the recorded track from a Kartoza teambuilding hike we carried out in
+                       August, 2014.</p>
+
+		    </p>
+		       The digital elevation model was created by extracting
+                       nodes from the national 1:50 000 countour lines and then using the QGIS
+                       interpolation tool to create a DEM - which was subsequently converted to a
+                       hillshade model.</p>
+
+                    <p><a href="/Boosmansbos/" class="btn btn-default"
+                          role="button">View</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/Swellendam/thumbnail.png" alt="Swellendam thumbnail">
+
+                <div class="caption">
+                    <h3>Swellendam</h3>
+
+		    <p>This map shows how you can use QGIS to publish your own
+custom maps based on <a href="http://www.openstreetmap.org/">OpenStreetMap</a>
+data. The roads and building data was downloaded using our <a
+href="http://osm.linfiniti.com">OSM Reporter</a> tool which provides ready to
+use .qml styles along with the extracted data. Additional context data is
+provided using data from the <a href="http://www.ngi.gov.za/">South African
+Chief Directorate of National Geo-Spatial Information</a>.</p>
 
                     <p><a href="/Swellendam/" class="btn btn-default"
                           role="button">View</a></p>
@@ -81,28 +112,30 @@
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="img/swellendam.png" alt="...">
+                <img src="img/africa.png" alt="...">
 
                 <div class="caption">
-                    <h3>More examples coming soon</h3>
+                    <h3>OSM Bright Africa</h3>
 
-                    <p>...</p>
+		    <p>Based on a fork of the <a
+href="https://github.com/mapbox/osm-bright">OSM Bright</a> project and data
+from the OpenStreetMap project, this map is a transparent tileset   for Africa,
+intended to be used as an overlay on top of other thematic layers. You can
+easily add this map to your leaflet project by using the following snippet: 
+                   <pre>
+L.tileLayer('http://78.46.89.12:20008/tile/OSMAfrica/{z}/{x}/{y}.png', {
+maxZoom: 18,
+attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+	'&lt;a href="http://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, ' +
+	'Imagery © &lt;a href="http://mapbox.com"&gt;Mapbox&lt;/a&gt;',
+id: 'examples.map-i86knfo3'
+}).addTo(map);
+                   </pre>
+<strong>Note:</strong> This is an unsupported service, we may change it or
+remove it at any time. Please <a mailto="info@kartoza.com">email us</a> if you
+wish to use this service on a commercial basis.</p>
 
-                    <p><a href="#" class="btn btn-default"
-                          role="button">View</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="img/swellendam.png" alt="...">
-
-                <div class="caption">
-                    <h3>More examples coming soon</h3>
-
-                    <p>...</p>
-
-                    <p><a href="#" class="btn btn-default"
+                    <p><a href="http://africa.kartoza.com/" class="btn btn-default"
                           role="button">View</a></p>
                 </div>
             </div>

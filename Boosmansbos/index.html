@@ -29,16 +29,18 @@
 	<script>
 		var map = L.map('map', {
     		    center: [-34.02205, 20.44254],
+    		    center: [-33.95293,20.82824],
     	            zoom: 15,
                     minZoom: 14,
                     maxZoom: 18,
-                    maxBounds: [[-34.049,20.410] ,[-34.010,20.478]],
+                    maxBounds: [[-34.049,20.410], [-34.010,20.478]],
+                    maxBounds: [[-33.91444,20.75351], [-33.98731,20.90626]],
 		});
 		var qgis = L.tileLayer.wms("http://maps.kartoza.com/cgi-bin/qgis_mapserv.fcgi?map=/web/Boosmansbos/Boosmansbos.qgs", {
 		    layers: 'Swellendam',
 		    format: 'image/png',
 		    transparent: true,
-		    attribution: 'QGIS'
+		    attribution: '(c)<a href="http://kartoza.com">Kartoza.com</a> and <a href="http://www.ngi.gov.za/">SA-NGI</a>'
 		}).addTo(map);
 	</script>
 </body>
