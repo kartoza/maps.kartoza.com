@@ -6,7 +6,7 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="places20140820112757168" name="Places">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="0" checked="Qt::Checked" name="OSM">
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="OSM">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Checked" id="roads20140820112756903" name="Roads">
                 <customproperties/>
@@ -15,19 +15,19 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::Checked" name="CDSM">
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="CDSM">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="3420_relief_points20140820110637373" name="3420_relief_points">
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="3420_relief_points20140820110637373" name="Spot Heights">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="3420_river_lines20140820110905600" name="3420_river_lines">
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="3420_river_lines20140820110905600" name="Rivers">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="3420_relief_lines20140820110812438" name="3420_relief_lines">
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="3420_relief_lines20140820110812438" name="Contours">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="building_density_heatmap20140822224557706" name="Building_density_heatmap">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="building_density_heatmap20140822224557706" name="Building heatmap">
             <customproperties/>
         </layer-tree-layer>
     </layer-tree-group>
@@ -35,10 +35,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>20.42357302464966651</xmin>
-            <ymin>-34.03329304754486628</ymin>
-            <xmax>20.45653908161011358</xmax>
-            <ymax>-34.01469263398319498</ymax>
+            <xmin>20.405158901468468</xmin>
+            <ymin>-34.04864161874721873</ymin>
+            <xmax>20.50856059753463256</xmax>
+            <ymax>-34.00014873505667623</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -92,7 +92,7 @@
                 <legendlayerfile isInOverview="0" layerid="places20140820112757168" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="false" checked="Qt::Checked" name="OSM">
+        <legendgroup open="true" checked="Qt::Checked" name="OSM">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Roads" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="roads20140820112756903" visible="1"/>
@@ -104,31 +104,31 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Checked" name="CDSM">
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="3420_relief_points" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Checked" name="CDSM">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Spot Heights" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="3420_relief_points20140820110637373" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="3420_river_lines" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Rivers" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="3420_river_lines20140820110905600" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="3420_relief_lines" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Contours" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="3420_relief_lines20140820110812438" visible="1"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Building_density_heatmap" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Building heatmap" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="building_density_heatmap20140822224557706" visible="0"/>
             </filegroup>
         </legendlayer>
     </legend>
     <projectlayers layercount="7">
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>3420_relief_lines20140820110812438</id>
             <datasource>./3420_relief_lines.shp</datasource>
             <title></title>
@@ -136,7 +136,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>3420_relief_lines</layername>
+            <layername>Contours</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -350,7 +350,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>/home/web/demo.qgis.org/Swellendam</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>uifilelayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -429,7 +429,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>3420_relief_points20140820110637373</id>
             <datasource>./3420_relief_points.shp</datasource>
             <title></title>
@@ -437,7 +437,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>3420_relief_points</layername>
+            <layername>Spot Heights</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -732,7 +732,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>3420_river_lines20140820110905600</id>
             <datasource>./3420_river_lines.shp</datasource>
             <title></title>
@@ -740,7 +740,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>3420_river_lines</layername>
+            <layername>Rivers</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -954,7 +954,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>/home/web/demo.qgis.org/Swellendam</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>uifilelayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -1030,7 +1030,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>building_density_heatmap20140822224557706</id>
             <datasource>./building_density_heatmap.tif</datasource>
             <title></title>
@@ -1038,7 +1038,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>Building_density_heatmap</layername>
+            <layername>Building heatmap</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -1059,7 +1059,7 @@
                 <noDataList bandNo="1" useSrcNoData="1"/>
             </noData>
             <pipe>
-                <rasterrenderer opacity="1" alphaBand="0" classificationMax="0.228378" classificationMinMaxOrigin="CumulativeCutFullExtentEstimated" band="1" classificationMin="0" type="singlebandpseudocolor">
+                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="0.228378" classificationMinMaxOrigin="CumulativeCutFullExtentEstimated" band="1" classificationMin="0" type="singlebandpseudocolor">
                     <rasterTransparency/>
                     <rastershader>
                         <colorrampshader colorRampType="INTERPOLATED" clip="0">

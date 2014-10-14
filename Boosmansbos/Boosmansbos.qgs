@@ -1448,8 +1448,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">true</WMSServiceCapabilities>
         <WMSContactPhone type="QString">+27 (0)28 514 3576</WMSContactPhone>
+        <WMSServiceCapabilities type="bool">true</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString">This is a hiking trail map for Boosmansbos Wilderness Area, near Heidelberg in the Western Cape Province of South Africa. The track shown is the recorded track from a Kartoza teambuilding hike we carried out in August, 2014.
 
 The digital elevation model was created by extracting nodes from the national 1:50 000 countour lines and then using the QGIS interpolation tool to create a DEM - which was subsequently converted to a hillshade model.</WMSServiceAbstract>
