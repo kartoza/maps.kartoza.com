@@ -5,4 +5,6 @@
 .SyncID
 .SyncIgnore
 .SyncIgnore~
+web/.sync/
 pg
+
