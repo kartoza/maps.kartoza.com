@@ -138,7 +138,11 @@ Waiting:    12112 13050 1471.5  12711   15588
 Total:      12343 13310 1491.5  12944   15893
 ```
 
-You can see that in particular the time per request dropped from 11.4 seconds to 7.5 seconds by adding one node.
+You can see that in particular the time per request dropped from 11.4 seconds 
+to 7.5 seconds by adding one node. You can also in rancher the load being 
+spread nicely across the nodes:
+
+![screen shot 2016-12-12 at 4 26 10 pm](https://cloud.githubusercontent.com/assets/178003/21102952/0f1a8c0e-c089-11e6-8076-77dcbd8f8159.png)
 
 ## Caveats
 
