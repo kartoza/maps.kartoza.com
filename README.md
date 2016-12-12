@@ -23,9 +23,48 @@ who are looking for ways to scale up QGIS Server in a production environment.
   provision the node. Note that this script if run unmodified will provision your
   host into **our** rancher environment which is definately not what you want, so
   be sure to modify the script.
-* Create a new stack in the environment
+* Create a new stack in the environment (illustrated in screenshots below)
 * Use the docker-compose.yml and rancher-compose.yml provided in this repo to
-  start up the service
+  start up the service (illustrated below)
+  
+  
+Adding a new stack...
+
+![screen shot 2016-12-12 at 3 10 29 pm](https://cloud.githubusercontent.com/assets/178003/21100546/55107158-c07d-11e6-841c-ffca92b583c9.png)
+
+Setting the docker-compose and rancher-compose yaml files...
+
+![screen shot 2016-12-12 at 3 11 02 pm](https://cloud.githubusercontent.com/assets/178003/21100547/57e910ce-c07d-11e6-9645-4379435e5724.png)
+
+Waiting for the stack to spin up...
+![screen shot 2016-12-12 at 3 12 16 pm](https://cloud.githubusercontent.com/assets/178003/21100561/6d93197e-c07d-11e6-968a-d86fecaa9a3b.png)
+
+
+Stack spin up completed...
+![screen shot 2016-12-12 at 3 15 33 pm](https://cloud.githubusercontent.com/assets/178003/21101144/6d00028a-c080-11e6-9457-3757fea16b6d.png)
+
+
+QGIS Nodes (currently 2 running)...
+![screen shot 2016-12-12 at 3 15 53 pm](https://cloud.githubusercontent.com/assets/178003/21101148/7431a0ea-c080-11e6-89de-edaba6d9a6e1.png)
+
+Detailed view of nodes ...
+![screen shot 2016-12-12 at 3 16 33 pm](https://cloud.githubusercontent.com/assets/178003/21101209/b992c4c0-c080-11e6-9541-344446dea3c4.png)
+
+
+Provisioning a new host ...
+![screen shot 2016-12-12 at 3 17 05 pm](https://cloud.githubusercontent.com/assets/178003/21101216/c2d35ce8-c080-11e6-9845-ad4342f80bd7.png)
+
+
+Scaling up to three nodes ...
+![screen shot 2016-12-12 at 3 32 12 pm](https://cloud.githubusercontent.com/assets/178003/21101224/c886bfe0-c080-11e6-884a-a7db06a6d35b.png)
+
+Waiting while a new node spins up ...
+![screen shot 2016-12-12 at 3 32 22 pm](https://cloud.githubusercontent.com/assets/178003/21101232/cd3fe534-c080-11e6-9f63-020d6e5f47d7.png)
+
+Third node integrated into the stack ...
+![screen shot 2016-12-12 at 3 33 15 pm](https://cloud.githubusercontent.com/assets/178003/21101236/d4746d0c-c080-11e6-9578-c94ee9402a92.png)
+
+
 
 ## Testing:
 
