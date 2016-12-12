@@ -1,13 +1,13 @@
 # fig build
 # fig up -d web
 
-db:
-  image: kartoza/postgis
-  volumes:
-    - ./pg:/var/lib/postgresql
-  environment:
-    - USERNAME=docker
-    - PASS=docker
+#db:
+#  image: kartoza/postgis:9.4-2.1
+#  volumes:
+#    - ./pg:/var/lib/postgresql
+#  environment:
+#    - USERNAME=docker
+#    - PASS=docker
 
 btsync:
   image: kartoza/btsync
@@ -20,7 +20,7 @@ btsync:
     - DEVICE='maps.kartoza.com'
 
 web:
-  image: kartoza/qgis-server
+  image: kartoza/qgis-server:2.14
   hostname: qgis-server
   environment:
     - DATABASE_NAME=gis
@@ -30,8 +30,8 @@ web:
   volumes_from:
     - btsync
   ports:
-    - "30002:80"
-  links:
-    - db:db
+    - "80:80"
+#  links:
+#    - db:db
 
 
