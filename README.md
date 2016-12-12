@@ -144,6 +144,12 @@ spread nicely across the nodes:
 
 ![screen shot 2016-12-12 at 4 26 10 pm](https://cloud.githubusercontent.com/assets/178003/21102952/0f1a8c0e-c089-11e6-8076-77dcbd8f8159.png)
 
+Here you can see the load balancer spreading the requests as I do many sequential
+map interactions in QGIS (using it as a WMS client). The screencapture below switches 
+between rancher to show CPU and IO load and the QGIS desktop.
+
+![qgis](https://cloud.githubusercontent.com/assets/178003/21103728/5596a070-c08c-11e6-8b60-e102983ff130.gif)
+
 ## Caveats
 
 1. Note that you will need to adapt this for your own needs since it contains
