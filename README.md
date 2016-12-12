@@ -56,9 +56,17 @@ We use three containers:
 * a QGIS container that will publish the maps in the file store.
 
 
-Note that you will need to adapt this for your own needs since it contains
-data that is specific to our company and the test.sh script points to our own
-servers.
+## Caveats
+
+1. Note that you will need to adapt this for your own needs since it contains
+  data that is specific to our company and the test.sh script points to our own
+  servers.
+1. When spinning up a new node, it may return OGC service errors until the btsync 
+  is completed. I don't have an elegant way to deal with this (yet) so you should 
+  take that into consideration both when testing and trying to understand if things 
+  are working, and in production as you load balancer may start forwarding traffic 
+  to the new node before it is actually ready to respond to these requests.
+
 
 Tim Sutton
 December 2016
