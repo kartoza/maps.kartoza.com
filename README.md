@@ -94,6 +94,51 @@ We use three containers:
   bad consequences for the published service. 
 * a QGIS container that will publish the maps in the file store.
 
+ Here is a sample output for two nodes:
+ 
+ ```
+ Concurrency Level:      2
+Time taken for tests:   34.177 seconds
+Complete requests:      3
+Failed requests:        0
+Total transferred:      30558 bytes
+HTML transferred:       30090 bytes
+Requests per second:    0.09 [#/sec] (mean)
+Time per request:       22784.397 [ms] (mean)
+Time per request:       11392.198 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.87 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:      215  222  13.0    226     237
+Processing: 15198 17344 1861.9  18417   18527
+Waiting:    15170 17319 1864.9  18394   18511
+Total:      15435 17566 1848.9  18631   18742
+```
+
+And here is what happens if we scale up to three nodes and then rerun the test:
+
+```
+Concurrency Level:      2
+Time taken for tests:   37.368 seconds
+Complete requests:      5
+Failed requests:        0
+Total transferred:      50930 bytes
+HTML transferred:       50150 bytes
+Requests per second:    0.13 [#/sec] (mean)
+Time per request:       14947.096 [ms] (mean)
+Time per request:       7473.548 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.33 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:      202  253  45.5    273     300
+Processing: 12124 13057 1470.0  12712   15594
+Waiting:    12112 13050 1471.5  12711   15588
+Total:      12343 13310 1491.5  12944   15893
+```
+
+You can see that in particular the time per request dropped from 11.4 seconds to 7.5 seconds by adding one node.
 
 ## Caveats
 
