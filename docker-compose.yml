@@ -1,37 +1,26 @@
-# fig build
-# fig up -d web
-
-#db:
-#  image: kartoza/postgis:9.4-2.1
-#  volumes:
-#    - ./pg:/var/lib/postgresql
-#  environment:
-#    - USERNAME=docker
-#    - PASS=docker
-
 btsync:
   image: kartoza/btsync
-  hostname: btsync
   volumes:
-    - ./web:/web
+    # cannot use host mounts in rancher environment so its a container volume
+    - /web
   environment:
     # This is the read only key
     - SECRET=BDPQXDNISWW2JR4IJTJWDXU3OMP3DSH5K
     - DEVICE='maps.kartoza.com'
 
-web:
+qgis:
   image: kartoza/qgis-server:2.14
-  hostname: qgis-server
-  environment:
-    - DATABASE_NAME=gis
-    - DATABASE_USERNAME=docker
-    - DATABASE_PASSWORD=docker
-    - DATABASE_HOST=db
   volumes_from:
     - btsync
-  ports:
-    - "80:80"
-#  links:
-#    - db:db
+  labels:
+    io.rancher.sidekicks: btsync
 
+loadbalancer:
+  ports:
+  - 80:80
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - qgis:qgis
+  stdin_open: true
 
