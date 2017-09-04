@@ -9,7 +9,7 @@ btsync:
     - DEVICE='maps.kartoza.com'
 
 qgis:
-  image: kartoza/qgis-server:2.14
+  image: kartoza/qgis-server:2.18
   volumes_from:
     - btsync
   labels:
