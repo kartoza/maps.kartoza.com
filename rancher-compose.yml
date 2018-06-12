@@ -1,16 +1,27 @@
-btsync:
-  scale: 2
+version: '2'
+services:
+  maps-lb:
+    scale: 1
+    start_on_create: true
+  geoserver:
+    scale: 1
+    start_on_create: true
+  web:
+    scale: 1
+    start_on_create: true
+  datadir:
+    scale: 1
+    start_on_create: true
+  mapproxy:
+    scale: 1
+    start_on_create: true
+  ngnix:
+    scale: 1
+    start_on_create: true
+  bstync:
+    scale: 1
+    start_on_create: true
+  mapserver:
+    scale: 1
+    start_on_create: true
 
-qgis:
-  scale: 2
-
-loadbalancer:
-  scale: 1
-  load_balancer_config:
-    haproxy_config: {}
-  health_check:
-    port: 42
-    interval: 2000
-    unhealthy_threshold: 3
-    healthy_threshold: 2
-    response_timeout: 2000
