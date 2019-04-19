@@ -36,7 +36,7 @@ services:
     image: kartoza/btsync
     environment:
       DEVICE: geoserverdata.kartoza.com
-      SECRET: AHEICKRGUNBLFBNMF4DAJYNKR6BOCZB2K
+      SECRET:
     stdin_open: true
     volumes:
     - datadir:/web:rw
@@ -71,7 +71,7 @@ services:
     image: kartoza/btsync
     environment:
       DEVICE: prod-maps.kartoza.com
-      SECRET: BDPQXDNISWW2JR4IJTJWDXU3OMP3DSH5K
+      SECRET:
     stdin_open: true
     volumes:
     - web:/web
