@@ -1,28 +1,96 @@
-btsync:
-  image: kartoza/btsync
-  volumes:
-    # cannot use host mounts in rancher environment so its a container volume
-    - /web
-  environment:
-    # This is the read only key
-    - SECRET=BDPQXDNISWW2JR4IJTJWDXU3OMP3DSH5K
-    - DEVICE='maps.kartoza.com'
-
-qgis:
-  image: kartoza/qgis-server:2.18
-  volumes_from:
-    - btsync
-  labels:
-    io.rancher.sidekicks: btsync
-  environment:
-    - QGIS_PROJECT_FILE=/web/CapeWinelands/winelands.qgs
-
-loadbalancer:
-  ports:
-  - 80:80
-  tty: true
-  image: rancher/load-balancer-service
-  links:
-  - qgis:qgis
-  stdin_open: true
+version: '2'
+services:
+  maps-lb:
+    image: rancher/lb-service-haproxy:v0.7.15
+    ports:
+    - 80:80/tcp
+    labels:
+      io.rancher.container.agent.role: environmentAdmin,agent
+      io.rancher.container.agent_service.drain_provider: 'true'
+      io.rancher.container.create_agent: 'true'
+  geoserver:
+    image: kartoza/geoserver:2.13.0
+    stdin_open: true
+    tty: true
+    extra_hosts:
+    - postgis.kartoza.com:postgis.kartoza.com
+    volumes_from:
+    - datadir
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.sidekicks: datadir
+  web:
+    image: kartoza/qgis-server:2.18.17
+    environment:
+      QGIS_PROJECT_FILE: ''
+    stdin_open: true
+    tty: true
+    extra_hosts:
+    - postgis.kartoza.com:postgis.kartoza.com
+    volumes_from:
+    - bstync
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.sidekicks: bstync
+  datadir:
+    image: kartoza/btsync
+    environment:
+      DEVICE: geoserverdata.kartoza.com
+      SECRET:
+    stdin_open: true
+    volumes:
+    - datadir:/web:rw
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  mapproxy:
+    image: kartoza/mapproxy
+    stdin_open: true
+    volumes:
+    - mapproxy:/mapproxy:rw
+    tty: true
+    extra_hosts:
+    - postgis.kartoza.com:postgis.kartoza.com
+    links:
+    - web:web
+    labels:
+      io.rancher.container.pull_image: always
+  ngnix:
+    image: nginx
+    stdin_open: true
+    volumes:
+    - web:/web
+    tty: true
+    links:
+    - geoserver:geoserver
+    - web:web
+    - mapserver:mapserver
+    labels:
+      io.rancher.container.pull_image: always
+  bstync:
+    image: kartoza/btsync
+    environment:
+      DEVICE: prod-maps.kartoza.com
+      SECRET:
+    stdin_open: true
+    volumes:
+    - web:/web
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  mapserver:
+    image: mazano/mapserver:dev
+    environment:
+      extra_hosts: postgis.kartoza.com
+    stdin_open: true
+    volumes:
+    - web:/web
+    - sld:/sld
+    tty: true
+    extra_hosts:
+    - postgis.kartoza.com:postgis.kartoza.com
+    ports:
+    - 65081:80/tcp
+    labels:
+      io.rancher.container.pull_image: always
 
